@@ -66,7 +66,7 @@ function(define_future_lib CPP_NAMESPACE)
 
   target_compile_definitions("${library_name}"
     PRIVATE
-      -DFIREBASE_NAMESPACE=playbillingclient
+      "FIREBASE_NAMESPACE=playbillingclient"
   )
   target_include_directories("${library_name}"
     PUBLIC
