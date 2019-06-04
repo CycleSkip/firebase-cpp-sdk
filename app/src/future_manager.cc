@@ -20,6 +20,12 @@
 #define FIREBASE_NAMESPACE firebase
 #endif
 
+#ifdef USE_PLAYBILLING_FUTURE
+#include "playbillingclient/future.h"
+#else
+#include "firebase/future.h"
+#endif
+
 namespace FIREBASE_NAMESPACE {
 
 FutureManager::FutureManager() {}

@@ -66,8 +66,14 @@ function(define_future_lib CPP_NAMESPACE)
 
   target_compile_definitions("${library_name}"
     PRIVATE
-      "FIREBASE_NAMESPACE=playbillingclient"
+      -DFIREBASE_NAMESPACE=${CPP_NAMESPACE}
   )
+  if("${CPP_NAMESPACE}" == "playbillingclient")
+    target_compile_definitions("${library_name}"
+      PRIVATE
+        -DUSE_PLAYBILLING_FUTURE=1
+    )
+  endif()
   target_include_directories("${library_name}"
     PUBLIC
       ${PROJECT_BINARY_DIR}/future_include
