@@ -68,7 +68,7 @@ function(define_future_lib CPP_NAMESPACE)
     PRIVATE
       -DFIREBASE_NAMESPACE=${CPP_NAMESPACE}
   )
-  if("${CPP_NAMESPACE}" == "playbillingclient")
+  if("${CPP_NAMESPACE}" STREQUAL "playbillingclient")
     target_compile_definitions("${library_name}"
       PRIVATE
         -DUSE_PLAYBILLING_FUTURE=1
