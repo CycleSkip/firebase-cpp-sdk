@@ -30,7 +30,7 @@
 #endif
 
 #ifdef USE_PLAYBILLING_FUTURE
-#include "playbillingclient/future.h"
+#include "playbillingclient/future_no.h"
 #else
 #include "app/src/include/firebase/future.h"
 #endif
