@@ -58,12 +58,15 @@ function(define_future_lib CPP_NAMESPACE)
   endif()
 
   add_library("${library_name}" STATIC
-      ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
       ${FUTURE_LIB_SRC_DIR}/../app/src/cleanup_notifier.cc
       ${FUTURE_LIB_SRC_DIR}/../app/src/future_manager.cc
       ${FUTURE_LIB_SRC_DIR}/../app/src/reference_counted_future_impl.cc
       ${generated_future_header_path}
       ${log_SRCS})
+
+  install("${library_name}" PRIVATE_HEADER 
+      ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
+  )
 
   target_compile_definitions("${library_name}"
     PRIVATE
