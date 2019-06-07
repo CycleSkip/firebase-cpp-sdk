@@ -64,8 +64,11 @@ function(define_future_lib CPP_NAMESPACE)
       ${generated_future_header_path}
       ${log_SRCS})
 
-  install("${library_name}" PRIVATE_HEADER 
-      ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
+  install(
+      TARGETS
+        "${library_name}" 
+      PRIVATE_HEADER 
+        ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
   )
 
   target_compile_definitions("${library_name}"
