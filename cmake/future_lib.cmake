@@ -61,15 +61,9 @@ function(define_future_lib CPP_NAMESPACE)
       ${FUTURE_LIB_SRC_DIR}/../app/src/cleanup_notifier.cc
       ${FUTURE_LIB_SRC_DIR}/../app/src/future_manager.cc
       ${FUTURE_LIB_SRC_DIR}/../app/src/reference_counted_future_impl.cc
+      ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
       ${generated_future_header_path}
       ${log_SRCS})
-
-  install(
-      TARGETS
-        "${library_name}" 
-      PRIVATE_HEADER 
-        ${FUTURE_LIB_SRC_DIR}/../app/src/include/firebase/internal/future_impl.h
-  )
 
   target_compile_definitions("${library_name}"
     PRIVATE
